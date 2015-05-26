@@ -1,0 +1,7 @@
+# Run Levels
+chkconfig --list
+man init
+
+# Video Cards
+/proc/driver/*
+

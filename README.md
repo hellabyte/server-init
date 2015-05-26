@@ -12,3 +12,7 @@ Initializes servers to my liking:
 6. Check if anaconda is the python manager, installs to ~/.local/opt
    otherwise
 7. With option will install open mpi
+
+
+WIP
+---
