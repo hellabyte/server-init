@@ -38,6 +38,7 @@ esac
 
 [[ ! -d $src ]] && mkdir -p $src || :
 links=( 
+  'http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2'
   'https://sourceforge.net/projects/levent/files/libevent/libevent-2.0/libevent-2.0.22-stable.tar.gz'
   'ftp://invisible-island.net/ncurses/ncurses.tar.gz'
   'http://downloads.sourceforge.net/project/tmux/tmux/tmux-2.0/tmux-2.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Ftmux%2Ffiles%2Ftmux%2F&ts=1432604315&use_mirror=iweb'
@@ -45,6 +46,7 @@ links=(
   'ftp://ftp.mpi-sb.mpg.de/pub/tex/mirror/ftp.dante.de/pub/tex/biblio/bibtex/utils/bibsort.zip'
 )
 names=(
+  'parallel'
   'libevent'
   'ncurses'
   'tmux'
@@ -52,6 +54,7 @@ names=(
   'bibsort'
 )
 optis=(
+  ' '
   ' '
   ' '
   "CFLAGS=-I${inc}/ncurses LDFLAGS=-L${lib}"
