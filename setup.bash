@@ -1,9 +1,24 @@
 #!/usr/bin/env bash
+# ======================================================================
+#  Launch server environment on new systems
+# ======================================================================
+# Notes
+# ----------------------------------------------------------------------
+# 
+#   ncurses:
+#
+#     may need `export CPPFLAGS="-P"` before configure 
+#     https://stackoverflow.com/questions/37475222/ncurses-6-0-compilation-error-error-expected-before-int
+#   
+#   tmux:
+#     
+#     https://github.com/tmux/tmux
+#
 
 home="$HOME/.local"
 src="$home/src"
 lib="$home/lib"
-inc="$home/inc"
+inc="$home/include"
 
 local_prefix=$home
 
@@ -39,7 +54,7 @@ names=(
 optis=(
   ' '
   ' '
-  "CFLAGS=-I${inc} LDFLAGS=-L${lib}"
+  "CFLAGS=-I${inc}/ncurses LDFLAGS=-L${lib}"
 )
 
 dcmi() { # download-configure-make-install
@@ -63,8 +78,9 @@ if [[ $conda_flag -eq 1 ]]; then
   )
 fi
 # vim
-hg pull
-hg update
+# hg pull && hg update
+git pull
+# Should checkout lastest stable branch
 ./configure --prefix=$local_prefix              \
   --enable-pythoninterp=yes --enable-gui        \
   --with-python-config-dir=$python_config_dir   \
